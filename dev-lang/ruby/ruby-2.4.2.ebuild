@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -35,7 +35,7 @@ IUSE="berkdb debug doc examples gdbm ipv6 jemalloc libressl +rdoc rubytests sock
 
 RDEPEND="
 	berkdb? ( sys-libs/db:= )
-	gdbm? ( sys-libs/gdbm:= )
+	gdbm? ( sys-libs/gdbm )
 	jemalloc? ( dev-libs/jemalloc )
 	ssl? (
 		!libressl? ( dev-libs/openssl:0= )
@@ -49,26 +49,27 @@ RDEPEND="
 	dev-libs/libyaml
 	virtual/libffi
 	sys-libs/zlib
-	>=app-eselect/eselect-ruby-20171225
-"
+	>=app-eselect/eselect-ruby-20161226
+	!<dev-ruby/rdoc-3.9.4
+	!<dev-ruby/rubygems-1.8.10-r1"
 
 DEPEND="${RDEPEND}"
 
 BUNDLED_GEMS="
-	>=dev-ruby/did_you_mean-1.2.0:2.5[ruby_targets_ruby25]
-	>=dev-ruby/minitest-5.10.3[ruby_targets_ruby25]
-	>=dev-ruby/net-telnet-0.1.1[ruby_targets_ruby25]
-	>=dev-ruby/power_assert-1.1.1[ruby_targets_ruby25]
-	>=dev-ruby/rake-12.3.0[ruby_targets_ruby25]
-	>=dev-ruby/test-unit-3.2.7[ruby_targets_ruby25]
-	>=dev-ruby/xmlrpc-0.3.0[ruby_targets_ruby25]
+	>=dev-ruby/did_you_mean-1.1.0:2.4[ruby_targets_ruby24]
+	>=dev-ruby/minitest-5.10.1[ruby_targets_ruby24]
+	>=dev-ruby/net-telnet-0.1.1[ruby_targets_ruby24]
+	>=dev-ruby/power_assert-0.4.1[ruby_targets_ruby24]
+	>=dev-ruby/rake-12.0.0[ruby_targets_ruby24]
+	>=dev-ruby/test-unit-3.2.3[ruby_targets_ruby24]
+	>=dev-ruby/xmlrpc-0.2.1[ruby_targets_ruby24]
 "
 
 PDEPEND="
 	${BUNDLED_GEMS}
-	virtual/rubygems[ruby_targets_ruby25]
-	>=dev-ruby/json-2.0.2[ruby_targets_ruby25]
-	rdoc? ( >=dev-ruby/rdoc-5.1.0[ruby_targets_ruby25] )
+	virtual/rubygems[ruby_targets_ruby24]
+	>=dev-ruby/json-2.0.2[ruby_targets_ruby24]
+	rdoc? ( >=dev-ruby/rdoc-5.1.0[ruby_targets_ruby24] )
 	xemacs? ( app-xemacs/ruby-modes )"
 
 src_prepare() {
@@ -80,10 +81,14 @@ src_prepare() {
 	# Remove bundled gems that we will install via PDEPEND, bug
 	# 539700. Use explicit version numbers to ensure rm fails when they
 	# change so we can update dependencies accordingly.
-	rm -f gems/{did_you_mean-1.2.0,minitest-5.10.3,net-telnet-0.1.1,power_assert-1.1.1,rake-12.3.0,test-unit-3.2.7,xmlrpc-0.3.0}.gem || die
+	rm -f gems/{did_you_mean-1.1.0,minitest-5.10.1,net-telnet-0.1.1,power_assert-0.4.1,rake-12.0.0,test-unit-3.2.3,xmlrpc-0.2.1}.gem || die
 
 	einfo "Removing bundled libraries..."
 	rm -fr ext/fiddle/libffi-3.2.1 || die
+
+	# Fix a hardcoded lib path in configure script
+	sed -i -e "s:\(RUBY_LIB_PREFIX=\"\${prefix}/\)lib:\1$(get_libdir):" \
+		configure.in || die "sed failed"
 
 	eapply_user
 
@@ -229,7 +234,7 @@ pkg_postinst() {
 
 	elog
 	elog "To switch between available Ruby profiles, execute as root:"
-	elog "\teselect ruby set ruby(23|24|...)"
+	elog "\teselect ruby set ruby(19|20|...)"
 	elog
 }
 
