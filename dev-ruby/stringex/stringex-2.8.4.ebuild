@@ -1,8 +1,8 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-USE_RUBY="ruby22 ruby23"
+EAPI=6
+USE_RUBY="ruby22 ruby23 ruby24"
 
 RUBY_FAKEGEM_DOC_DIR="rdoc"
 RUBY_FAKEGEM_EXTRADOC="README.rdoc"
@@ -23,17 +23,12 @@ IUSE="test"
 # USE flags at all.
 ruby_add_bdepend "
 	test? (
-		>=dev-ruby/i18n-0.6.9:0.6
+		>=dev-ruby/i18n-0.7.0:0.7
 		dev-ruby/redcloth
 		dev-ruby/test-unit:2
 		>=dev-ruby/activerecord-3
 		dev-ruby/sqlite3 )"
 
 all_ruby_prepare() {
-	sed -i -e '1agem "i18n", "~>0.6.9"' test/test_helper.rb || die
-}
-
-each_ruby_test() {
-	# rake seems to break this
-	ruby-ng_testrb-2 -Ilib -Itest test/unit/*/*_test.rb test/performance/*_test.rb || die "tests failed"
+	sed -i -e '1agem "i18n", "~>0.7.0"' test/test_helper.rb || die
 }
