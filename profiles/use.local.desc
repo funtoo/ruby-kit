@@ -2,29 +2,3 @@
 # your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using egencache *
 
-dev-lang/rubinius:llvm - Build with llvm. Currently the package only builds against old versions of llvm.
-dev-lang/ruby:jemalloc - Use dev-libs/jemalloc for memory allocation.
-dev-lang/ruby:rdoc - Install dev-ruby/rdoc after installing Ruby.
-dev-lang/ruby:readline - Use the sys-libs/readline library to provide the readline extension, used for instance by the irb tool. This flag is meaningful only if the libedit USE flag is disabled. If neither libedit nor readline USE flags are enabled, the readline extension will not be built (and irb will lose line editing functionality).
-dev-lang/ruby:rubytests - Install ruby tests that can only be run after ruby is installed
-dev-ruby/barby:cairo - Add support for writing images (PNG, PS, EPS and, if supported, PDF and SVG) using dev-ruby/rcairo. Not available on JRuby.
-dev-ruby/barby:png - Add support for writing PNG images using dev-ruby/chunky_png.
-dev-ruby/barby:prawn - Add support for writing PDF documents using dev-ruby/prawn.
-dev-ruby/barby:qrcode - Add support for QRCode 2D codes using dev-ruby/rqrcode.
-dev-ruby/barby:rmagick - Add support for writing images (among others PNG, GIF and JPEG) using dev-ruby/rmagick. Not available on JRuby.
-dev-ruby/facter:dmi - Use sys-apps/dmidecode to determine hardware system properties
-dev-ruby/facter:pciutils - Use sys-apps/pciutils to determine hardware system properties
-dev-ruby/facter:virt - Use app-emulation/virt-what for virtual machine detection
-dev-ruby/faraday_middleware:mashify - Include FaradayMiddleware::Mashify
-dev-ruby/faraday_middleware:oauth - Include FaradayMiddleware::OAuth
-dev-ruby/faraday_middleware:parsexml - Include FaradayMiddleware::ParseXml
-dev-ruby/faraday_middleware:rashify - Include FaradayMiddleware::Rashify
-dev-ruby/maruku:highlight - Enable source code highlighting via dev-ruby/syntax
-dev-ruby/net-ssh:sodium - Use dev-libs/libsodium via dev-ruby/rbnacl for Ed25519 support
-dev-ruby/rails:asset-pipeline - Also install the default components for the asset pipeline. These are not required but they are activated automatically in new Rails projects by default.
-dev-ruby/rrdtool-bindings:graph - Enable support for graphing functions
-dev-ruby/rspec-core:highlight - Enable source code highlighting via dev-ruby/coderay
-dev-ruby/ruby-sdl:image - Enable media-libs/sdl-image support
-dev-ruby/ruby-sdl:mixer - Enable media-libs/sdl-mixer support
-dev-ruby/ruby-sdl:sge - Enable sdl-sge support
-dev-ruby/rubygems:server - Install support for the rubygems server
