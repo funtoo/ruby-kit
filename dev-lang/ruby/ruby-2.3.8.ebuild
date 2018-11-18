@@ -1,7 +1,7 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=5
 
 #PATCHSET=1
 
@@ -12,7 +12,7 @@ S=${WORKDIR}/${MY_P}
 
 SLOT=$(get_version_component_range 1-2)
 MY_SUFFIX=$(delete_version_separator 1 ${SLOT})
-RUBYVERSION=${SLOT}.0
+RUBYVERSION=2.3.0
 
 if [[ -n ${PATCHSET} ]]; then
 	if [[ ${PVR} == ${PV} ]]; then
@@ -25,17 +25,17 @@ else
 fi
 
 DESCRIPTION="An object-oriented scripting language"
-HOMEPAGE="http://www.ruby-lang.org/"
+HOMEPAGE="https://www.ruby-lang.org/"
 SRC_URI="mirror://ruby/${SLOT}/${MY_P}.tar.xz
-		 https://dev.gentoo.org/~graaff/ruby-team/${PN}-patches-${PATCHSET}.tar.bz2"
+		 https://dev.gentoo.org/~flameeyes/ruby-team/${PN}-patches-${PATCHSET}.tar.bz2"
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
-IUSE="berkdb debug doc examples gdbm ipv6 jemalloc libressl +rdoc rubytests socks5 ssl static-libs tk xemacs"
+KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86 ~amd64-fbsd ~x86-fbsd"
+IUSE="berkdb debug doc examples gdbm ipv6 jemalloc libressl +rdoc rubytests socks5 ssl tk xemacs ncurses +readline"
 
 RDEPEND="
 	berkdb? ( sys-libs/db:= )
-	gdbm? ( sys-libs/gdbm )
+	gdbm? ( sys-libs/gdbm:= )
 	jemalloc? ( dev-libs/jemalloc )
 	ssl? (
 		!libressl? ( dev-libs/openssl:0= )
@@ -46,30 +46,31 @@ RDEPEND="
 		dev-lang/tcl:0=[threads]
 		dev-lang/tk:0=[threads]
 	)
+	ncurses? ( sys-libs/ncurses:0= )
+	readline?  ( sys-libs/readline:0= )
 	dev-libs/libyaml
-	virtual/libffi
+	virtual/libffi:=
 	sys-libs/zlib
-	>=app-eselect/eselect-ruby-20161226
+	>=app-eselect/eselect-ruby-20151229
 	!<dev-ruby/rdoc-3.9.4
 	!<dev-ruby/rubygems-1.8.10-r1"
 
 DEPEND="${RDEPEND}"
 
 BUNDLED_GEMS="
-	>=dev-ruby/did_you_mean-1.1.0:2.4[ruby_targets_ruby24]
-	>=dev-ruby/minitest-5.10.1[ruby_targets_ruby24]
-	>=dev-ruby/net-telnet-0.1.1[ruby_targets_ruby24]
-	>=dev-ruby/power_assert-0.4.1[ruby_targets_ruby24]
-	>=dev-ruby/rake-12.0.0[ruby_targets_ruby24]
-	>=dev-ruby/test-unit-3.2.3[ruby_targets_ruby24]
-	>=dev-ruby/xmlrpc-0.2.1[ruby_targets_ruby24]
+	>=dev-ruby/did_you_mean-1.0.0:1[ruby_targets_ruby23]
+	>=dev-ruby/minitest-5.8.3[ruby_targets_ruby23]
+	>=dev-ruby/net-telnet-0.1.1[ruby_targets_ruby23]
+	>=dev-ruby/power_assert-0.2.6[ruby_targets_ruby23]
+	>=dev-ruby/rake-10.4.2[ruby_targets_ruby23]
+	>=dev-ruby/test-unit-3.1.5[ruby_targets_ruby23]
 "
 
 PDEPEND="
 	${BUNDLED_GEMS}
-	virtual/rubygems[ruby_targets_ruby24]
-	>=dev-ruby/json-2.0.2[ruby_targets_ruby24]
-	rdoc? ( >=dev-ruby/rdoc-5.1.0[ruby_targets_ruby24] )
+	virtual/rubygems[ruby_targets_ruby23]
+	>=dev-ruby/json-1.8.3[ruby_targets_ruby23]
+	rdoc? ( >=dev-ruby/rdoc-4.2.1[ruby_targets_ruby23] )
 	xemacs? ( app-xemacs/ruby-modes )"
 
 src_prepare() {
@@ -81,16 +82,11 @@ src_prepare() {
 	# Remove bundled gems that we will install via PDEPEND, bug
 	# 539700. Use explicit version numbers to ensure rm fails when they
 	# change so we can update dependencies accordingly.
-	rm -f gems/{did_you_mean-1.1.0,minitest-5.10.1,net-telnet-0.1.1,power_assert-0.4.1,rake-12.0.0,test-unit-3.2.3,xmlrpc-0.2.1}.gem || die
-
-	einfo "Removing bundled libraries..."
-	rm -fr ext/fiddle/libffi-3.2.1 || die
+	rm -f gems/{did_you_mean-1.0.0,minitest-5.8.3,net-telnet-0.1.1,power_assert-0.2.6,rake-10.4.2,test-unit-3.1.5}.gem || die
 
 	# Fix a hardcoded lib path in configure script
 	sed -i -e "s:\(RUBY_LIB_PREFIX=\"\${prefix}/\)lib:\1$(get_libdir):" \
 		configure.in || die "sed failed"
-
-	eapply_user
 
 	eautoreconf
 }
@@ -123,6 +119,9 @@ src_configure() {
 	use ipv6 || myconf="${myconf} --with-lookup-order-hack=INET"
 
 	# Determine which modules *not* to build depending in the USE flags.
+	if ! use readline ; then
+		modules="${modules},readline"
+	fi
 	if ! use berkdb ; then
 		modules="${modules},dbm"
 	fi
@@ -131,6 +130,9 @@ src_configure() {
 	fi
 	if ! use ssl ; then
 		modules="${modules},openssl"
+	fi
+	if ! use ncurses ; then
+		modules="${modules},curses"
 	fi
 	if ! use tk ; then
 		modules="${modules},tk"
@@ -151,9 +153,6 @@ src_configure() {
 		$(use_enable socks5 socks) \
 		$(use_enable doc install-doc) \
 		--enable-ipv6 \
-		$(use_enable static-libs static) \
-		$(use_enable static-libs install-static-library) \
-		$(use_with static-libs static-linked-ext) \
 		$(use_enable debug) \
 		${myconf} \
 		--enable-option-checking=no \
@@ -193,8 +192,8 @@ src_install() {
 
 	local MINIRUBY=$(echo -e 'include Makefile\ngetminiruby:\n\t@echo $(MINIRUBY)'|make -f - getminiruby)
 
-	LD_LIBRARY_PATH="${S}:${ED}/usr/$(get_libdir)${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
-	RUBYLIB="${S}:${ED}/usr/$(get_libdir)/ruby/${RUBYVERSION}"
+	LD_LIBRARY_PATH="${S}:${D}/usr/$(get_libdir)${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
+	RUBYLIB="${S}:${D}/usr/$(get_libdir)/ruby/${RUBYVERSION}"
 	for d in $(find "${S}/ext" -type d) ; do
 		RUBYLIB="${RUBYLIB}:$d"
 	done
@@ -228,13 +227,13 @@ src_install() {
 }
 
 pkg_postinst() {
-	if [[ ! -n $(readlink "${EROOT}"usr/bin/ruby) ]] ; then
+	if [[ ! -n $(readlink "${ROOT}"usr/bin/ruby) ]] ; then
 		eselect ruby set ruby${MY_SUFFIX}
 	fi
 
 	elog
 	elog "To switch between available Ruby profiles, execute as root:"
-	elog "\teselect ruby set ruby(19|20|...)"
+	elog "\teselect ruby set ruby(22|23|...)"
 	elog
 }
 
