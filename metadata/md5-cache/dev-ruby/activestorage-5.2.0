@@ -4,11 +4,11 @@ DESCRIPTION=Attach cloud and local files in Rails applications
 EAPI=6
 HOMEPAGE=https://github.com/rails/rails
 IUSE=test elibc_FreeBSD ruby_targets_ruby23 ruby_targets_ruby24 ruby_targets_ruby25 test test
-KEYWORDS=~amd64 ~ppc64 ~x86
+KEYWORDS=~amd64 ~ppc ~ppc64 ~x86
 LICENSE=MIT
 RDEPEND=ruby_targets_ruby23? ( ~dev-ruby/actionpack-5.2.0:*[ruby_targets_ruby23] ~dev-ruby/activerecord-5.2.0:*[ruby_targets_ruby23] >=dev-ruby/marcel-0.3.1[ruby_targets_ruby23] =dev-ruby/marcel-0.3*[ruby_targets_ruby23] ) ruby_targets_ruby24? ( ~dev-ruby/actionpack-5.2.0:*[ruby_targets_ruby24] ~dev-ruby/activerecord-5.2.0:*[ruby_targets_ruby24] >=dev-ruby/marcel-0.3.1[ruby_targets_ruby24] =dev-ruby/marcel-0.3*[ruby_targets_ruby24] ) ruby_targets_ruby25? ( ~dev-ruby/actionpack-5.2.0:*[ruby_targets_ruby25] ~dev-ruby/activerecord-5.2.0:*[ruby_targets_ruby25] >=dev-ruby/marcel-0.3.1[ruby_targets_ruby25] =dev-ruby/marcel-0.3*[ruby_targets_ruby25] ) ruby_targets_ruby23? ( dev-lang/ruby:2.3 ) ruby_targets_ruby24? ( dev-lang/ruby:2.4 ) ruby_targets_ruby25? ( dev-lang/ruby:2.5 ) ruby_targets_ruby23? ( virtual/rubygems[ruby_targets_ruby23] ) ruby_targets_ruby24? ( virtual/rubygems[ruby_targets_ruby24] ) ruby_targets_ruby25? ( virtual/rubygems[ruby_targets_ruby25] )
 REQUIRED_USE=|| ( ruby_targets_ruby23 ruby_targets_ruby24 ruby_targets_ruby25 )
 SLOT=5.2
 SRC_URI=https://github.com/rails/rails/archive/v5.2.0.tar.gz -> rails-5.2.0.tgz
 _eclasses_=epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	e99babeaa7d98c1caaa6a61a79902210	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	1fb064d93b3ffd05c2fb19ef430a4aa1	java-utils-2	0ee72667014428e01a01df2345244cf3	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	ruby-fakegem	cac2e21b84be90235a90a9b36087c8f4	ruby-ng	db566842d642e5c611d8a2284ac465b7	ruby-utils	e5942a80e3c3b936c6b84d6dc4af9f9c	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=11235b3445e1c0e38b874f300ed9e8c3
+_md5_=7b66d46f5765d9d4c3902ffb95044592
