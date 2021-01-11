@@ -1,8 +1,9 @@
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
-USE_RUBY="ruby24 ruby25 ruby26"
+USE_RUBY="ruby24 ruby25 ruby26 ruby27"
 
 RUBY_FAKEGEM_RECIPE_DOC="none"
 RUBY_FAKEGEM_EXTRADOC="Changelog.md README.md TODO"
@@ -47,4 +48,7 @@ all_ruby_prepare() {
 
 	# Add missing requires
 	sed -i -e '1irequire "forwardable"; require "pathname"' test/input_stream_test.rb || die
+
+	# Fix broken test that uses native endian
+	sed -i -e '/pack/ s/LLS/VVv/' test/file_extract_test.rb || die
 }
