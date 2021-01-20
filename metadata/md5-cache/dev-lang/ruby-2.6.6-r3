@@ -12,4 +12,4 @@ RDEPEND=berkdb? ( sys-libs/db:= ) gdbm? ( sys-libs/gdbm:= ) jemalloc? ( dev-libs
 SLOT=2.6
 SRC_URI=https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.6.tar.xz
 _eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	a09389deba2c0a7108b581e02c7cecbf	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	1d91b03d42ab6308b5f4f6b598ed110e	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529
-_md5_=b2171d04d4145e8ff4bca6fbeef045ab
+_md5_=6f8fc80297bded03871ec8c06fb757f0
