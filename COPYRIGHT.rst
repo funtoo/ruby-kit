@@ -1,7 +1,7 @@
 Licensing
 =========
 
-This file documents the licensing information for ruby-kit 2.7-prime.
+This file documents the licensing information for ruby-kit next.
 
 The contents of this kit are free software; you can redistribute and/or modify
 it under the the terms of GNU General Public License version 2 as published by
