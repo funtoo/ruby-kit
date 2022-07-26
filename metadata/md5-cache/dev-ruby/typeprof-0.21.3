@@ -1,0 +1,16 @@
+BDEPEND=test? ( ruby_targets_ruby31? ( >=dev-ruby/rbs-1.8.1[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( >=dev-ruby/rbs-1.8.1[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( >=dev-ruby/rbs-1.8.1[ruby_targets_ruby27(-)] ) ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 ) ruby_targets_ruby31? ( test? ( dev-ruby/rake[ruby_targets_ruby31(-)] ) ) ruby_targets_ruby30? ( test? ( dev-ruby/rake[ruby_targets_ruby30(-)] ) ) ruby_targets_ruby27? ( test? ( dev-ruby/rake[ruby_targets_ruby27(-)] ) ) ruby_targets_ruby31? ( virtual/rubygems[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] ) test? ( ruby_targets_ruby31? ( virtual/rubygems[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] ) )
+DEFINED_PHASES=compile configure install prepare setup test unpack
+DEPEND=ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 ) ruby_targets_ruby31? ( virtual/rubygems[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] )
+DESCRIPTION=An experimental type-level Ruby interpreter for testing and understanding Ruby code
+EAPI=7
+HOMEPAGE=https://github.com/ruby/typeprof
+IUSE=test ruby_targets_ruby27 ruby_targets_ruby30 ruby_targets_ruby31 test test
+KEYWORDS=*
+LICENSE=MIT
+RDEPEND=ruby_targets_ruby31? ( >=dev-ruby/rbs-1.8.1[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( >=dev-ruby/rbs-1.8.1[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( >=dev-ruby/rbs-1.8.1[ruby_targets_ruby27(-)] ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 ) ruby_targets_ruby31? ( virtual/rubygems[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] )
+REQUIRED_USE=|| ( ruby_targets_ruby31 ruby_targets_ruby30 ruby_targets_ruby27 )
+RESTRICT=!test? ( test ) !test? ( test )
+SLOT=0
+SRC_URI=https://github.com/ruby/typeprof/tarball/06e1849bd788613a31cebd0d7d9c4cae15d09b97 -> typeprof-0.21.3-06e1849.tar.gz
+_eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	multilib	d410501a125f99ffb560b0c523cd3d1e	ruby-fakegem	2e0373a7f4e043d3d58231990b0bf65f	ruby-ng	517b8b0e1f18ba9deb1c46ddfb88b95b	ruby-utils	daabb2a420d9b5dd405eb5474382f47b	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=916f6458a02e5c1b80ef291a5da43ac9

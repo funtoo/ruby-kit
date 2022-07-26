@@ -1,0 +1,16 @@
+BDEPEND=ruby_targets_ruby31? ( test? ( dev-ruby/bundler[ruby_targets_ruby31(-)] dev-ruby/rdoc[ruby_targets_ruby31(-)] dev-ruby/test-unit[ruby_targets_ruby31(-)] ) ) ruby_targets_ruby30? ( test? ( dev-ruby/bundler[ruby_targets_ruby30(-)] dev-ruby/rdoc[ruby_targets_ruby30(-)] dev-ruby/test-unit[ruby_targets_ruby30(-)] ) ) ruby_targets_ruby27? ( test? ( dev-ruby/bundler[ruby_targets_ruby27(-)] dev-ruby/rdoc[ruby_targets_ruby27(-)] dev-ruby/test-unit[ruby_targets_ruby27(-)] ) ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 ) ruby_targets_ruby31? ( doc? ( dev-ruby/rdoc[ruby_targets_ruby31(-)] ) ) ruby_targets_ruby30? ( doc? ( dev-ruby/rdoc[ruby_targets_ruby30(-)] ) ) ruby_targets_ruby27? ( doc? ( dev-ruby/rdoc[ruby_targets_ruby27(-)] ) ) ruby_targets_ruby31? ( test? ( dev-ruby/rake[ruby_targets_ruby31(-)] ) ) ruby_targets_ruby30? ( test? ( dev-ruby/rake[ruby_targets_ruby30(-)] ) ) ruby_targets_ruby27? ( test? ( dev-ruby/rake[ruby_targets_ruby27(-)] ) ) ruby_targets_ruby31? ( virtual/rubygems[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] ) test? ( ruby_targets_ruby31? ( virtual/rubygems[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] ) )
+DEFINED_PHASES=compile configure install prepare setup test unpack
+DEPEND=ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 ) ruby_targets_ruby31? ( virtual/rubygems[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] )
+DESCRIPTION=Type Signature for Ruby
+EAPI=7
+HOMEPAGE=https://github.com/ruby/rbs
+IUSE=test ruby_targets_ruby27 ruby_targets_ruby30 ruby_targets_ruby31 doc test test
+KEYWORDS=*
+LICENSE=|| ( Ruby-BSD BSD-2 )
+RDEPEND=ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 ) ruby_targets_ruby31? ( virtual/rubygems[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( virtual/rubygems[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( virtual/rubygems[ruby_targets_ruby27(-)] )
+REQUIRED_USE=|| ( ruby_targets_ruby31 ruby_targets_ruby30 ruby_targets_ruby27 )
+RESTRICT=!test? ( test ) !test? ( test )
+SLOT=0
+SRC_URI=https://github.com/ruby/rbs/tarball/c02bafb891b23538244de5a1326fcb49fcf0dcb3 -> rbs-2.6.0-c02bafb.tar.gz
+_eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	multilib	d410501a125f99ffb560b0c523cd3d1e	ruby-fakegem	2e0373a7f4e043d3d58231990b0bf65f	ruby-ng	517b8b0e1f18ba9deb1c46ddfb88b95b	ruby-utils	daabb2a420d9b5dd405eb5474382f47b	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=911f187acc9b07206a4705d550a50f0c
