@@ -13,7 +13,7 @@ RUBYVERSION=${SLOT}.0
 
 DESCRIPTION="A dynamic, interpreted, object-oriented programming language"
 HOMEPAGE="https://www.ruby-lang.org/"
-SRC_URI="https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.4.tar.xz -> ruby-3.0.4.tar.xz"
+SRC_URI="https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.3.tar.xz -> ruby-3.1.3.tar.xz"
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
 KEYWORDS="*"
@@ -43,27 +43,30 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 BUNDLED_GEMS="
-	>=dev-ruby/minitest-5.14.2[ruby_targets_ruby30]
-	>=dev-ruby/power_assert-1.2.0[ruby_targets_ruby30]
-	>=dev-ruby/rake-13.0.3[ruby_targets_ruby30]
-	>=dev-ruby/rbs-1.0.0[ruby_targets_ruby30]
-	>=dev-ruby/rexml-3.2.4[ruby_targets_ruby30]
-	>=dev-ruby/rss-0.2.9[ruby_targets_ruby30]
-	>=dev-ruby/test-unit-3.3.7[ruby_targets_ruby30]
-	>=dev-ruby/typeprof-0.11.0[ruby_targets_ruby30]
+	>=dev-ruby/minitest-5.15.0[ruby_targets_ruby31]
+	>=dev-ruby/net-ftp-0.1.3[ruby_targets_ruby31]
+	>=dev-ruby/power_assert-2.0.1[ruby_targets_ruby31]
+	>=dev-ruby/rake-13.0.6[ruby_targets_ruby31]
+	>=dev-ruby/rbs-2.1.0[ruby_targets_ruby31]
+	>=dev-ruby/rexml-3.2.5[ruby_targets_ruby31]
+	>=dev-ruby/rss-0.2.9[ruby_targets_ruby31]
+	>=dev-ruby/test-unit-3.5.3[ruby_targets_ruby31]
+	>=dev-ruby/typeprof-0.12.2[ruby_targets_ruby31]
 "
 
 PDEPEND="
 	${BUNDLED_GEMS}
-	>=virtual/rubygems-17[ruby_targets_ruby30]
-	>=dev-ruby/bundler-2.2.15[ruby_targets_ruby30]
-	>=dev-ruby/did_you_mean-1.5.0[ruby_targets_ruby30]
-	>=dev-ruby/json-2.5.1[ruby_targets_ruby30]
-	rdoc? ( >=dev-ruby/rdoc-6.4.0[ruby_targets_ruby30] )
+	>=virtual/rubygems-17[ruby_targets_ruby31]
+	>=dev-ruby/bundler-2.3.3[ruby_targets_ruby31]
+	>=dev-ruby/did_you_mean-1.6.1[ruby_targets_ruby31]
+	>=dev-ruby/json-2.6.1[ruby_targets_ruby31]
+	rdoc? ( >=dev-ruby/rdoc-6.4.0[ruby_targets_ruby31] )
 	xemacs? ( app-xemacs/ruby-modes )"
 
+
+
 src_prepare() {
-	eapply "${REPODIR}/dev-lang"/files/"${SLOT}"/010*.patch
+	eapply "${REPODIR}/dev-lang"/ruby/files/"${SLOT}"/010-default-gem-location.patch
 
 	einfo "Unbundling gems..."
 	cd "$S"
@@ -233,7 +236,7 @@ pkg_postinst() {
 
 	elog
 	elog "To switch between available Ruby profiles, execute as root:"
-	elog "\teselect ruby set ruby(26|27|30|31|...)"
+	elog "\teselect ruby set ruby(27|30|31|...)"
 	elog
 }
 
