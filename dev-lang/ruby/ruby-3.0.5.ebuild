@@ -65,7 +65,7 @@ PDEPEND="
 
 
 src_prepare() {
-	eapply "${REPODIR}/dev-lang"/ruby/files/"${SLOT}"/010-default-gem-location.patch
+	eapply "${REPODIR}/dev-lang"/files/"${SLOT}"/010-default-gem-location.patch
 
 	einfo "Unbundling gems..."
 	cd "$S"
