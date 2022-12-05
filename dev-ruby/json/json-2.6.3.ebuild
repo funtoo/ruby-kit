@@ -12,7 +12,7 @@ inherit multilib ruby-fakegem
 
 DESCRIPTION="A JSON implementation as a Ruby extension"
 HOMEPAGE="https://github.com/flori/json"
-SRC_URI="https://github.com/flori/json/tarball/5d9d8f3799f2f65ebaa7b485fd6078ce5c79818c -> json-2.6.2-5d9d8f3.tar.gz"
+SRC_URI="https://github.com/flori/json/tarball/63bc6ae289a419195ff9bcab0f0fc58e2ace372a -> json-2.6.3-63bc6ae.tar.gz"
 
 KEYWORDS="*"
 LICENSE="Ruby"
