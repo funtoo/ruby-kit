@@ -11,7 +11,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="Power Assert for Ruby"
 HOMEPAGE="https://github.com/ruby/power_assert"
-SRC_URI="https://github.com/ruby/power_assert/tarball/210fd30b4f2ed6c6833ff036e93c4ba77d419354 -> power_assert-2.0.2-210fd30.tar.gz"
+SRC_URI="https://github.com/ruby/power_assert/tarball/c1dc7bb24ba26d531400cf134ae078bea1a75de2 -> power_assert-2.0.3-c1dc7bb.tar.gz"
 
 KEYWORDS="*"
 LICENSE="|| ( Ruby BSD-2 )"
