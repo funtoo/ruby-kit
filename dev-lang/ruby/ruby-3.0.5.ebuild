@@ -17,7 +17,8 @@ SRC_URI="https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.5.tar.xz -> ruby-3.0.
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
 KEYWORDS="*"
-IUSE="berkdb debug doc examples gdbm ipv6 jemalloc jit +rdoc rubytests socks5 +ssl static-libs systemtap tk xemacs"
+IUSE="berkdb debug examples gdbm ipv6 jemalloc jit +rdoc rubytests socks5 +ssl static-libs systemtap tk xemacs"
+IUSE+=" doc"
 
 RDEPEND="
 	berkdb? ( sys-libs/db:= )
@@ -218,7 +219,7 @@ src_install() {
 		dodoc -r sample
 	fi
 
-	dodoc ChangeLog NEWS.md doc/NEWS* README*
+	dodoc ChangeLog NEWS.md README*
 
 	if use rubytests; then
 		pushd test

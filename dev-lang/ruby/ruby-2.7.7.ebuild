@@ -17,7 +17,8 @@ SRC_URI="https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.7.tar.xz -> ruby-2.7.
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
 KEYWORDS="*"
-IUSE="berkdb debug doc examples gdbm ipv6 jemalloc jit +rdoc rubytests socks5 +ssl static-libs systemtap tk xemacs"
+IUSE="berkdb debug examples gdbm ipv6 jemalloc jit +rdoc rubytests socks5 +ssl static-libs systemtap tk xemacs"
+IUSE+=" doc"
 
 RDEPEND="
 	berkdb? ( sys-libs/db:= )
@@ -216,7 +217,7 @@ src_install() {
 		dodoc -r sample
 	fi
 
-	dodoc ChangeLog NEWS doc/NEWS* README*
+	dodoc ChangeLog NEWS README*
 
 	if use rubytests; then
 		pushd test

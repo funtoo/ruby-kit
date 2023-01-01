@@ -1,0 +1,17 @@
+BDEPEND=ruby_targets_ruby32? ( test? ( dev-ruby/json[ruby_targets_ruby32(-)] dev-ruby/minitest:5[ruby_targets_ruby32(-)] dev-ruby/rake[ruby_targets_ruby32(-)] dev-ruby/rdoc[ruby_targets_ruby32(-)] dev-ruby/webrick[ruby_targets_ruby32(-)] ) ) ruby_targets_ruby31? ( test? ( dev-ruby/json[ruby_targets_ruby31(-)] dev-ruby/minitest:5[ruby_targets_ruby31(-)] dev-ruby/rake[ruby_targets_ruby31(-)] dev-ruby/rdoc[ruby_targets_ruby31(-)] dev-ruby/webrick[ruby_targets_ruby31(-)] ) ) ruby_targets_ruby30? ( test? ( dev-ruby/json[ruby_targets_ruby30(-)] dev-ruby/minitest:5[ruby_targets_ruby30(-)] dev-ruby/rake[ruby_targets_ruby30(-)] dev-ruby/rdoc[ruby_targets_ruby30(-)] dev-ruby/webrick[ruby_targets_ruby30(-)] ) ) ruby_targets_ruby27? ( test? ( dev-ruby/json[ruby_targets_ruby27(-)] dev-ruby/minitest:5[ruby_targets_ruby27(-)] dev-ruby/rake[ruby_targets_ruby27(-)] dev-ruby/rdoc[ruby_targets_ruby27(-)] dev-ruby/webrick[ruby_targets_ruby27(-)] ) ) ruby_targets_ruby32? ( dev-lang/ruby:3.2 ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 )
+DEFINED_PHASES=compile configure install postinst prepare setup test unpack
+DEPEND=ruby_targets_ruby32? ( virtual/ruby-ssl[ruby_targets_ruby32(-)] ) ruby_targets_ruby31? ( virtual/ruby-ssl[ruby_targets_ruby31(-)] ) ruby_targets_ruby30? ( virtual/ruby-ssl[ruby_targets_ruby30(-)] ) ruby_targets_ruby27? ( virtual/ruby-ssl[ruby_targets_ruby27(-)] ) ruby_targets_ruby32? ( dev-lang/ruby:3.2 ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 )
+DESCRIPTION=Library packaging and distribution for Ruby.
+EAPI=7
+HOMEPAGE=https://rubygems.org/ https://github.com/rubygems/rubygems
+IUSE=server test ruby_targets_ruby27 ruby_targets_ruby30 ruby_targets_ruby31 ruby_targets_ruby32
+KEYWORDS=*
+LICENSE=GPL-2 || ( Ruby MIT )
+PDEPEND=server? ( =dev-ruby/builder-3* )
+RDEPEND=ruby_targets_ruby32? ( dev-lang/ruby:3.2 ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 )
+REQUIRED_USE=|| ( ruby_targets_ruby32 ruby_targets_ruby31 ruby_targets_ruby30 ruby_targets_ruby27 )
+RESTRICT=!test? ( test )
+SLOT=0
+SRC_URI=https://github.com/rubygems/rubygems/tarball/2cd3ed45bfd74608ba82164b37f91e817425feeb -> rubygems-3.4.2-2cd3ed4.tar.gz
+_eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	multilib	d410501a125f99ffb560b0c523cd3d1e	prefix	e51c7882b7b721e54e684f7eb143cbfe	ruby-ng	b696b71528105a90c4e44b101bd7f8ed	ruby-utils	3791942eec3367882de76288f91c9d78	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=c810461cb067d45f2abd8aba9f7e1d4e

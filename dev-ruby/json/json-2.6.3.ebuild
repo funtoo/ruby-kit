@@ -2,13 +2,13 @@
 
 EAPI=7
 
-USE_RUBY="ruby27 ruby30 ruby31"
+USE_RUBY="ruby27 ruby30 ruby31 ruby32"
 RUBY_FAKEGEM_EXTRADOC="CHANGES.md README.md"
 RUBY_FAKEGEM_DOCDIR="doc"
 RUBY_FAKEGEM_GEMSPEC="${PN}.gemspec"
 RUBY_FAKEGEM_EXTENSIONS=(ext/json/ext/parser/extconf.rb ext/json/ext/generator/extconf.rb)
 
-inherit multilib ruby-fakegem
+inherit ruby-fakegem
 
 DESCRIPTION="A JSON implementation as a Ruby extension"
 HOMEPAGE="https://github.com/flori/json"

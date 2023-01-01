@@ -1,0 +1,12 @@
+BDEPEND=ruby_targets_ruby32? ( dev-lang/ruby:3.2 ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 )
+DEFINED_PHASES=compile configure install postinst preinst prepare setup test unpack
+DEPEND=ruby_targets_ruby32? ( dev-lang/ruby:3.2 ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 )
+DESCRIPTION=Virtual ebuild for the Ruby OpenSSL bindings
+EAPI=7
+IUSE=ruby_targets_ruby27 ruby_targets_ruby30 ruby_targets_ruby31 ruby_targets_ruby32
+KEYWORDS=*
+RDEPEND=ruby_targets_ruby27? ( dev-lang/ruby:2.7[ssl] ) ruby_targets_ruby30? ( dev-lang/ruby:3.0[ssl] ) ruby_targets_ruby31? ( dev-lang/ruby:3.1[ssl] ) ruby_targets_ruby32? ( dev-lang/ruby:3.2[ssl] ) ruby_targets_ruby32? ( dev-lang/ruby:3.2 ) ruby_targets_ruby31? ( dev-lang/ruby:3.1 ) ruby_targets_ruby30? ( dev-lang/ruby:3.0 ) ruby_targets_ruby27? ( dev-lang/ruby:2.7 )
+REQUIRED_USE=|| ( ruby_targets_ruby32 ruby_targets_ruby31 ruby_targets_ruby30 ruby_targets_ruby27 )
+SLOT=0
+_eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	multilib	d410501a125f99ffb560b0c523cd3d1e	ruby-ng	b696b71528105a90c4e44b101bd7f8ed	ruby-utils	3791942eec3367882de76288f91c9d78	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=53535a32e1061009fad5ba8a0c6fca42
