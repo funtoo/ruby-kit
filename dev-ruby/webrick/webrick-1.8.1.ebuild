@@ -11,7 +11,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="HTTP server toolkit"
 HOMEPAGE="https://github.com/ruby/webrick"
-SRC_URI="https://github.com/ruby/webrick/tarball/841b7dadd5d2dc7cd5f5cceca2258ad53023f8dd -> webrick-1.8.0-841b7da.tar.gz"
+SRC_URI="https://github.com/ruby/webrick/tarball/158a7ef85337e0e5cdce0c29cb5cb89c7beb9c53 -> webrick-1.8.1-158a7ef.tar.gz"
 
 post_src_unpack() {
 	if [ ! -d "${S}/all/${P}" ] ; then
