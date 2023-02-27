@@ -13,7 +13,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="Type Signature for Ruby"
 HOMEPAGE="https://github.com/ruby/rbs"
-SRC_URI="https://github.com/ruby/rbs/tarball/215adf644b83e9daae490fbccd3652ee61156b61 -> rbs-3.0.0-215adf6.tar.gz"
+SRC_URI="https://github.com/ruby/rbs/tarball/240ae8faddf273956ce547e995549840c0ec906e -> rbs-3.0.1-240ae8f.tar.gz"
 
 KEYWORDS="*"
 LICENSE="|| ( Ruby-BSD BSD-2 )"
