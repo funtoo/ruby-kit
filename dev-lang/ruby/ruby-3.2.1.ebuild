@@ -13,16 +13,11 @@ RUBYVERSION=${SLOT}.0
 
 DESCRIPTION="A dynamic, interpreted, object-oriented programming language"
 HOMEPAGE="https://www.ruby-lang.org/"
-SRC_URI="https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.0.tar.xz -> ruby-3.2.0.tar.xz"
+SRC_URI="https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.1.tar.xz -> ruby-3.2.1.tar.xz"
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
 KEYWORDS=""
-IUSE="berkdb debug examples gdbm ipv6 jemalloc jit +rdoc rubytests socks5 +ssl static-libs systemtap tk xemacs"
-# https://bugs.funtoo.org/browse/FL-10864
-# For some reason Generating RDoc documentation is not loading libruby32.so.3.2 properly
-# error while loading shared libraries: libruby32.so.3.2: cannot open shared object file: No such file or directory
-# For now disabling RDoc generation for Ruby 3.2.0 until this new behavior can be debugged further
-IUSE+=" -doc"
+IUSE="berkdb debug doc examples gdbm ipv6 jemalloc jit +rdoc rubytests socks5 +ssl static-libs systemtap tk xemacs"
 
 RDEPEND="
 	berkdb? ( sys-libs/db:= )
@@ -44,7 +39,6 @@ RDEPEND="
 	sys-libs/zlib
 	>=app-eselect/eselect-ruby-20221225
 "
-RDEPEND+=">=virtual/rust-1.58.0"
 
 DEPEND="${RDEPEND}"
 
@@ -248,7 +242,7 @@ pkg_postinst() {
 
 	elog
 	elog "To switch between available Ruby profiles, execute as root:"
-	elog "\teselect ruby set ruby(27|30|31|...)"
+	elog "\teselect ruby set ruby(27|30|31|32|...)"
 	elog
 }
 

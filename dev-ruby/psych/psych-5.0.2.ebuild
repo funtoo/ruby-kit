@@ -11,7 +11,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="A libyaml wrapper for Ruby "
 HOMEPAGE="https://github.com/ruby/psych"
-SRC_URI="https://rubygems.org/downloads/psych-5.0.1.gem -> psych-5.0.1.gem"
+SRC_URI="https://rubygems.org/downloads/psych-5.0.2.gem -> psych-5.0.2.gem"
 
 KEYWORDS="*"
 LICENSE="BSD-2"

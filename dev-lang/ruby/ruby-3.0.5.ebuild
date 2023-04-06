@@ -17,8 +17,7 @@ SRC_URI="https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.5.tar.xz -> ruby-3.0.
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
 KEYWORDS="*"
-IUSE="berkdb debug examples gdbm ipv6 jemalloc jit +rdoc rubytests socks5 +ssl static-libs systemtap tk xemacs"
-IUSE+=" doc"
+IUSE="berkdb debug doc examples gdbm ipv6 jemalloc jit +rdoc rubytests socks5 +ssl static-libs systemtap tk xemacs"
 
 RDEPEND="
 	berkdb? ( sys-libs/db:= )
@@ -236,7 +235,7 @@ pkg_postinst() {
 
 	elog
 	elog "To switch between available Ruby profiles, execute as root:"
-	elog "\teselect ruby set ruby(27|30|31|...)"
+	elog "\teselect ruby set ruby(27|30|31|32|...)"
 	elog
 }
 
