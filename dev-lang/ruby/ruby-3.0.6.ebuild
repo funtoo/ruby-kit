@@ -13,7 +13,7 @@ RUBYVERSION=${SLOT}.0
 
 DESCRIPTION="A dynamic, interpreted, object-oriented programming language"
 HOMEPAGE="https://www.ruby-lang.org/"
-SRC_URI="https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.5.tar.xz -> ruby-3.0.5.tar.xz"
+SRC_URI="https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.6.tar.xz -> ruby-3.0.6.tar.xz"
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
 KEYWORDS="*"

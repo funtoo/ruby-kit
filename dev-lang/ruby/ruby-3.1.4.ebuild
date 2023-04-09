@@ -13,7 +13,7 @@ RUBYVERSION=${SLOT}.0
 
 DESCRIPTION="A dynamic, interpreted, object-oriented programming language"
 HOMEPAGE="https://www.ruby-lang.org/"
-SRC_URI="https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.7.tar.xz -> ruby-2.7.7.tar.xz"
+SRC_URI="https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.4.tar.xz -> ruby-3.1.4.tar.xz"
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
 KEYWORDS="*"
@@ -37,27 +37,37 @@ RDEPEND="
 	dev-libs/libffi:=
 	sys-libs/readline:0=
 	sys-libs/zlib
-	>=app-eselect/eselect-ruby-20191222
+	>=app-eselect/eselect-ruby-20201225
 "
 
 DEPEND="${RDEPEND}"
 
 BUNDLED_GEMS="
-	>=dev-ruby/minitest-5.13.0[ruby_targets_ruby27]
-	>=dev-ruby/net-telnet-0.2.0[ruby_targets_ruby27]
-	>=dev-ruby/power_assert-1.1.7[ruby_targets_ruby27]
-	>=dev-ruby/rake-13.0.1[ruby_targets_ruby27]
-	>=dev-ruby/test-unit-3.3.4[ruby_targets_ruby27]
-	>=dev-ruby/xmlrpc-0.3.0[ruby_targets_ruby27]
+	>=dev-ruby/debug-1.6.3[ruby_targets_ruby31]
+	>=dev-ruby/irb-1.5.0[ruby_targets_ruby31]
+	>=dev-ruby/matrix-0.4.2[ruby_targets_ruby31]
+	>=dev-ruby/minitest-5.15.0[ruby_targets_ruby31]
+	>=dev-ruby/net-ftp-0.1.3[ruby_targets_ruby31]
+	>=dev-ruby/net-imap-0.2.3[ruby_targets_ruby31]
+	>=dev-ruby/net-pop-0.1.1[ruby_targets_ruby31]
+	>=dev-ruby/net-smtp-0.3.1[ruby_targets_ruby31]
+	>=dev-ruby/power_assert-2.0.1[ruby_targets_ruby31]
+	>=dev-ruby/prime-0.1.2[ruby_targets_ruby31]
+	>=dev-ruby/rake-13.0.6[ruby_targets_ruby31]
+	>=dev-ruby/rbs-2.1.0[ruby_targets_ruby31]
+	>=dev-ruby/rexml-3.2.5[ruby_targets_ruby31]
+	>=dev-ruby/rss-0.2.9[ruby_targets_ruby31]
+	>=dev-ruby/test-unit-3.5.3[ruby_targets_ruby31]
+	>=dev-ruby/typeprof-0.12.2[ruby_targets_ruby31]
 "
 
 PDEPEND="
 	${BUNDLED_GEMS}
-	>=virtual/rubygems-17[ruby_targets_ruby27]
-	>=dev-ruby/bundler-2.1.4[ruby_targets_ruby27]
-	>=dev-ruby/did_you_mean-1.3.1[ruby_targets_ruby27]
-	>=dev-ruby/json-2.0.2[ruby_targets_ruby27]
-	rdoc? ( >=dev-ruby/rdoc-6.2.0[ruby_targets_ruby27] )
+	>=virtual/rubygems-17[ruby_targets_ruby31]
+	>=dev-ruby/bundler-2.3.3[ruby_targets_ruby31]
+	>=dev-ruby/did_you_mean-1.6.1[ruby_targets_ruby31]
+	>=dev-ruby/json-2.6.1[ruby_targets_ruby31]
+	rdoc? ( >=dev-ruby/rdoc-6.4.0[ruby_targets_ruby31] )
 	xemacs? ( app-xemacs/ruby-modes )"
 
 
@@ -216,7 +226,7 @@ src_install() {
 		dodoc -r sample
 	fi
 
-	dodoc ChangeLog NEWS README*
+	dodoc ChangeLog NEWS.md README*
 
 	if use rubytests; then
 		pushd test
