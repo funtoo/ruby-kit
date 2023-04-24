@@ -44,13 +44,7 @@ module Gem
     end
 
     # Set Gentoo defaults for gem commands
-    begin
-      undef :operating_system_defaults
-    rescue NameError
-      # Avoid either runtime errors or redefinition warnings since
-      # this method is not present in all rubygem versions distributed
-      # with dev-lang/ruby.
-    end
+    undef :operating_system_defaults
     def operating_system_defaults
       {
         'install' => "--install-dir #{install_dir}",

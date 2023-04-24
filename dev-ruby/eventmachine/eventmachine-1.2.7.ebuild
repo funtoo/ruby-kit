@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,12 +12,12 @@ RUBY_FAKEGEM_EXTRADOC="docs/*.md README.md"
 inherit ruby-fakegem
 
 DESCRIPTION="EventMachine is a fast, simple event-processing library for Ruby programs"
-HOMEPAGE="https://github.com/eventmachine/eventmachine"
+HOMEPAGE="http://rubyeventmachine.com"
 SRC_URI="https://github.com/eventmachine/eventmachine/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 Ruby )"
 SLOT="0"
-KEYWORDS="amd64 ~arm64 ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
+KEYWORDS="amd64 ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
 IUSE=""
 
 DEPEND="${DEPEND}
@@ -74,7 +74,7 @@ each_ruby_compile() {
 	for extdir in ext ext/fastfilereader; do
 		pushd $extdir
 		# both extensions use C++, so use the CXXFLAGS not the CFLAGS
-		emake V=1 CFLAGS="${CXXFLAGS} -fPIC" archflag="${LDFLAGS}"
+		emake V=1 CFLAGS="${CXXFLAGS} -fPIC" archflag="${LDFLAGS}" || die "emake failed for ${extdir}"
 		popd
 		cp $extdir/*.so lib/ || die "Unable to copy extensions for ${extdir}"
 	done
@@ -88,5 +88,5 @@ all_ruby_install() {
 	all_fakegem_install
 
 	insinto /usr/share/doc/${PF}/
-	doins -r examples
+	doins -r examples || die "Failed to install examples"
 }
