@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install prepare setup test unpack
-DEPEND=ruby_targets_ruby26? ( test? ( dev-ruby/test-unit:2[ruby_targets_ruby26(-)] dev-ruby/mocha:1.0[ruby_targets_ruby26(-)] dev-ruby/webmock[ruby_targets_ruby26(-)] dev-ruby/rack[ruby_targets_ruby26(-)] dev-ruby/actionpack:5.2[ruby_targets_ruby26(-)] ) ) ruby_targets_ruby26? ( dev-lang/ruby:2.6 ) ruby_targets_ruby26? ( doc? ( dev-ruby/rdoc[ruby_targets_ruby26(-)] ) ) ruby_targets_ruby26? ( test? ( dev-ruby/rake[ruby_targets_ruby26(-)] ) ) ruby_targets_ruby26? ( virtual/rubygems[ruby_targets_ruby26(-)] !!dev-ruby/psych[ruby_targets_ruby26(-)] ) test? ( ruby_targets_ruby26? ( virtual/rubygems[ruby_targets_ruby26(-)] ) )
+DEPEND=ruby_targets_ruby26? ( test? ( dev-ruby/bundler[ruby_targets_ruby26(-)] dev-ruby/test-unit:2[ruby_targets_ruby26(-)] dev-ruby/mocha:1.0[ruby_targets_ruby26(-)] dev-ruby/webmock[ruby_targets_ruby26(-)] dev-ruby/rack[ruby_targets_ruby26(-)] dev-ruby/actionpack:5.2[ruby_targets_ruby26(-)] dev-ruby/railties:5.2[ruby_targets_ruby26(-)] ) ) ruby_targets_ruby26? ( dev-lang/ruby:2.6 ) ruby_targets_ruby26? ( doc? ( dev-ruby/rdoc[ruby_targets_ruby26(-)] ) ) ruby_targets_ruby26? ( test? ( dev-ruby/rake[ruby_targets_ruby26(-)] ) ) ruby_targets_ruby26? ( virtual/rubygems[ruby_targets_ruby26(-)] !!dev-ruby/psych[ruby_targets_ruby26(-)] ) test? ( ruby_targets_ruby26? ( virtual/rubygems[ruby_targets_ruby26(-)] ) )
 DESCRIPTION=A RubyGem for implementing both OAuth clients and servers
 EAPI=6
 HOMEPAGE=https://github.com/oauth-xx/oauth-ruby
@@ -12,4 +12,4 @@ RESTRICT=!test? ( test ) !test? ( test )
 SLOT=0
 SRC_URI=https://github.com/oauth-xx/oauth-ruby/archive/v0.5.4.tar.gz -> oauth-0.5.4.tar.gz
 _eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	multilib	d410501a125f99ffb560b0c523cd3d1e	ruby-fakegem	6ee14a23a169409059ed36d4dddc3197	ruby-ng	326d357165d5919a0ce08d15288c6e04	ruby-utils	3791942eec3367882de76288f91c9d78	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=aef435d0a3e8f3e0d6188a975b298357
+_md5_=979052f74c3161281788ccfe0c9dc3f8
