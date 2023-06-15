@@ -13,7 +13,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="Racc is an LALR(1) parser generator.  It is written in Ruby itself, and generates ruby programs."
 HOMEPAGE="https://github.com/ruby/racc"
-SRC_URI="https://github.com/ruby/racc/tarball/0feca00301230a94be1484ae3fd2d1f0f6eaa88e -> racc-1.7.0-0feca00.tar.gz"
+SRC_URI="https://github.com/ruby/racc/tarball/0fc0dc957166c2e69a4e95f74d6e23ae80bb770d -> racc-1.7.1-0fc0dc9.tar.gz"
 
 KEYWORDS="*"
 LICENSE="LGPL-2.1"
