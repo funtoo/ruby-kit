@@ -11,7 +11,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="interactive Ruby"
 HOMEPAGE="https://github.com/ruby/irb"
-SRC_URI="https://github.com/ruby/irb/tarball/b9a9dd97df3ce6d42dbed58ad483c2ea2839a8bf -> irb-1.7.1-b9a9dd9.tar.gz"
+SRC_URI="https://github.com/ruby/irb/tarball/85d6b4d146a6ef5ae6bca31ca4a004c0e47931d2 -> irb-1.7.2-85d6b4d.tar.gz"
 
 KEYWORDS="*"
 LICENSE="|| ( Ruby BSD-2 )"
