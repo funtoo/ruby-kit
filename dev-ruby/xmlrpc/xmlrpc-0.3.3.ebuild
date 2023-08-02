@@ -11,7 +11,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="The Ruby standard library package 'xmlrpc'"
 HOMEPAGE="https://github.com/ruby/xmlrpc"
-SRC_URI="https://github.com/ruby/xmlrpc/tarball/e57c3b7d0f3522c36806b30d45b6d787346e8fa8 -> xmlrpc-0.3.2-e57c3b7.tar.gz"
+SRC_URI="https://github.com/ruby/xmlrpc/tarball/3f62b9106a999269a91281892867582e6e2b4ad3 -> xmlrpc-0.3.3-3f62b91.tar.gz"
 
 KEYWORDS="*"
 LICENSE="|| ( Ruby-BSD BSD-2 )"
