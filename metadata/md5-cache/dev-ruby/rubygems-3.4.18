@@ -14,4 +14,4 @@ RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://github.com/rubygems/rubygems/tarball/d2e3d8e3f4462f92d67bf60b0833f6b59dcd73fa -> rubygems-3.4.18-d2e3d8e.tar.gz
 _eclasses_=estack	43ddf5aaffa7a8d0482df54d25a66a1f	multilib	d410501a125f99ffb560b0c523cd3d1e	prefix	e51c7882b7b721e54e684f7eb143cbfe	ruby-ng	b696b71528105a90c4e44b101bd7f8ed	ruby-utils	3791942eec3367882de76288f91c9d78	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=d3b5c1dfb071d4f787df5e5bfc012bde
+_md5_=a842f2b50ec470264255dabc8f3ae67a
