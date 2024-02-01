@@ -1,4 +1,4 @@
-BDEPEND=>=app-portage/elt-patches-20170815 !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.16.1:1.16 >=sys-devel/automake-1.15.1:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+BDEPEND=>=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71 >=sys-devel/libtool-2.4
 DEFINED_PHASES=compile configure install postinst postrm prepare test
 DEPEND=berkdb? ( sys-libs/db:= ) gdbm? ( sys-libs/gdbm:= ) jemalloc? ( dev-libs/jemalloc:= ) jit? ( || ( sys-devel/gcc:* sys-devel/clang:* ) ) ssl? ( dev-libs/openssl:0= ) socks5? ( >=net-proxy/dante-1.1.13 ) systemtap? ( dev-util/systemtap ) tk? ( dev-lang/tcl:0=[threads] dev-lang/tk:0=[threads] ) dev-libs/libyaml dev-libs/libffi:= sys-libs/readline:0= sys-libs/zlib >=app-eselect/eselect-ruby-20201225
 DESCRIPTION=A dynamic, interpreted, object-oriented programming language
@@ -11,5 +11,5 @@ PDEPEND=>=dev-ruby/debug-1.6.3[ruby_targets_ruby31] >=dev-ruby/irb-1.5.0[ruby_ta
 RDEPEND=berkdb? ( sys-libs/db:= ) gdbm? ( sys-libs/gdbm:= ) jemalloc? ( dev-libs/jemalloc:= ) jit? ( || ( sys-devel/gcc:* sys-devel/clang:* ) ) ssl? ( dev-libs/openssl:0= ) socks5? ( >=net-proxy/dante-1.1.13 ) systemtap? ( dev-util/systemtap ) tk? ( dev-lang/tcl:0=[threads] dev-lang/tk:0=[threads] ) dev-libs/libyaml dev-libs/libffi:= sys-libs/readline:0= sys-libs/zlib >=app-eselect/eselect-ruby-20201225
 SLOT=3.1
 SRC_URI=https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.4.tar.xz -> ruby-3.1.4.tar.xz
-_eclasses_=autotools	5223f703a2e9c194fcda924f8c4b6baf	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_eclasses_=autotools	e9ade2787b2f54643c7cdffbfa1cca9c	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=100c0e0a7ff7e92140287183b9cb4f52
