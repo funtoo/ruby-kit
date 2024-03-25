@@ -10,7 +10,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="minitest provides a complete suite of testing facilities supporting TDD, BDD, mocking, and benchmarking"
 HOMEPAGE="https://github.com/seattlerb/minitest"
-SRC_URI="https://rubygems.org/downloads/minitest-5.18.0.gem -> minitest-5.18.0.gem"
+SRC_URI="https://rubygems.org/downloads/minitest-5.22.3.gem -> minitest-5.22.3.gem"
 
 KEYWORDS="*"
 LICENSE="MIT"

@@ -8,14 +8,12 @@ inherit ruby-fakegem
 
 DESCRIPTION="A simple PEG library for Ruby"
 HOMEPAGE="https://github.com/evanphx/kpeg"
-SRC_URI="https://rubygems.org/downloads/kpeg-1.3.2.gem -> kpeg-1.3.2.gem"
+SRC_URI="https://rubygems.org/downloads/kpeg-1.3.3.gem -> kpeg-1.3.3.gem"
 
 KEYWORDS="*"
 LICENSE="MIT"
 SLOT="1"
 IUSE="test"
-
-PATCHES=( "${REPODIR}/dev-ruby/files/${PN}/kpeg-1.1.0-utf8.patch" )
 
 ruby_add_bdepend "test? ( dev-ruby/minitest:5 )"
 

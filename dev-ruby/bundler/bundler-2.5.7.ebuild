@@ -15,7 +15,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="Manage your Ruby application's gem dependencies"
 HOMEPAGE="https://github.com/rubygems/rubygems"
-SRC_URI="https://rubygems.org/downloads/bundler-2.4.10.gem -> bundler-2.4.10.gem"
+SRC_URI="https://rubygems.org/downloads/bundler-2.5.7.gem -> bundler-2.5.7.gem"
 
 KEYWORDS="*"
 LICENSE="MIT"
