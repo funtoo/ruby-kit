@@ -11,7 +11,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="This library provides functionality to send internet mail via SMTP, the Simple Mail Transfer Protocol."
 HOMEPAGE="https://github.com/ruby/net-smtp"
-SRC_URI="https://github.com/ruby/net-smtp/tarball/7ac1f4485e945ee7771ed025261c8f55210a65e3 -> net-smtp-0.4.0.1-7ac1f44.tar.gz"
+SRC_URI="https://github.com/ruby/net-smtp/tarball/5b60464eab4fb33c225757f7ab022e4066c0250a -> net-smtp-0.5.0-5b60464.tar.gz"
 
 KEYWORDS="*"
 LICENSE="|| ( Ruby BSD-2 )"
