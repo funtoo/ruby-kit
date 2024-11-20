@@ -11,7 +11,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="Prime numbers and factorization library."
 HOMEPAGE="https://github.com/ruby/prime"
-SRC_URI="https://github.com/ruby/prime/tarball/0732c2d92a7e60f83cc9e1836a93c0047694a563 -> prime-0.1.2-0732c2d.tar.gz"
+SRC_URI="https://github.com/ruby/prime/tarball/a5546263bebeb465adaeb6fabda9d8ad447e076f -> prime-0.1.3-a554626.tar.gz"
 
 KEYWORDS="*"
 LICENSE="|| ( Ruby BSD-2 )"
