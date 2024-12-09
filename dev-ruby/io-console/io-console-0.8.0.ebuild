@@ -12,7 +12,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="add console capabilities to IO instance"
 HOMEPAGE="https://github.com/ruby/io-console"
-SRC_URI="https://github.com/ruby/io-console/tarball/1f2877a18512ec6d90d4d6d3d9d3fdf8095575a8 -> io-console-0.7.2-1f2877a.tar.gz"
+SRC_URI="https://github.com/ruby/io-console/tarball/467508a0c64aa0dc4ae4f42179442570f52140f0 -> io-console-0.8.0-467508a.tar.gz"
 
 LICENSE="BSD-2"
 KEYWORDS="*"
