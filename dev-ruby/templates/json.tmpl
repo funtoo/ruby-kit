@@ -47,21 +47,9 @@ all_ruby_prepare() {
 	# Remove hardcoded and broken -O setting.
 	sed -i -e '/^  \(if\|unless\)/,/^  end/ s:^:#:' \
 		-e '/^unless/,/^end/ s:^:#:' ext/json/ext/*/extconf.rb || die
-
-	# Avoid setting gem since it will not be available yet when installing
-	sed -i -e '/gem/ s:^:#:' tests/test_helper.rb || die
 }
-
-#each_ruby_compile() {
-#	for ext in parser generator ; do
-#		cp ext/json/ext/${ext}/${ext}$(get_modname) ext/json/ext/ || die
-#	done
-#}
 
 each_ruby_install() {
 	each_fakegem_install
-
-	#ruby_fakegem_newins ext/json/ext/generator$(get_modname) lib/json/ext/generator$(get_modname)
-	#ruby_fakegem_newins ext/json/ext/parser$(get_modname) lib/json/ext/parser$(get_modname)
 }
 
